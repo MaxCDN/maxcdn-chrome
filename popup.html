@@ -4,9 +4,29 @@
     <title>MaxCDN Chrome</title>
     <script src="jsoauth.js"></script>
     <script src="script.js"></script>
+    <style>
+      body { width: 500px; }
+    </style>
   </head>
   <body>
-    <h1>Account Info</h1>
-    <p id="account-info"></p>
+    <h1>Reports - Past 30 Days</h1>
+    <hr />
+    <div>
+      <span id="size"></span> GB
+      <br />
+      Transferred
+    </div>
+    <hr />
+    <div>
+      <span id="cache-hits"></span>
+      <br />
+      Cache Hits
+    </div>
+    <hr />
+    <div>
+      <span id="non-cache-hits"></span>
+      <br />
+      Non-cache Hits
+    </div>
   </body>
 </html>

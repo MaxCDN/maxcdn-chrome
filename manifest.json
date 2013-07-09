@@ -14,8 +14,10 @@
     "default_title": "MaxCDN Extension",
     "default_popup": "popup.html"
   },
+  "options_page": "options.html",
   "permissions": [
     "https://rws.netdna.com/*",
-    "tabs"
+    "tabs",
+    "storage"
   ]
 }
