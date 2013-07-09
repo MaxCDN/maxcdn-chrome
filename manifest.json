@@ -1,0 +1,21 @@
+{
+  "name": "MaxCDN Chrome",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "View your MaxCDN Chrome Extension.",
+  "homepage_url": "https://extension.maxcdn.com",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon19.png",
+    "default_title": "MaxCDN Extension",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://rws.netdna.com/*",
+    "tabs"
+  ]
+}
