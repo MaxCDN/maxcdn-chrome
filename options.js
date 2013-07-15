@@ -8,7 +8,7 @@ document.onreadystatechange = function () {
     var consumerSecret = document.getElementById('consumer-secret').value
     var companyAlias = document.getElementById('company-alias').value
     /*globals chrome*/
-    chrome.storage.local.set({ MaxConsumerKey: consumerKey, MaxConsumerSecret: consumerSecret, MaxConsumerSecret: companyAlias }, function() {
+    chrome.storage.local.set({ MaxConsumerKey: consumerKey, MaxConsumerSecret: consumerSecret, MaxCompanyAlias: companyAlias }, function() {
       alert('Successfully Saved Key, Secret and Alias')
     })
   })
