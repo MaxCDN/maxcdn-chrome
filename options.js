@@ -6,9 +6,10 @@ document.onreadystatechange = function () {
   $btn.addEventListener('click', function() {
     var consumerKey = document.getElementById('consumer-key').value
     var consumerSecret = document.getElementById('consumer-secret').value
+    var companyAlias = document.getElementById('company-alias').value
     /*globals chrome*/
-    chrome.storage.local.set({ MaxConsumerKey: consumerKey, MaxConsumerSecret: consumerSecret }, function() {
-      alert('Successfully saved consumerKey and consumerSecret')
+    chrome.storage.local.set({ MaxConsumerKey: consumerKey, MaxConsumerSecret: consumerSecret, MaxConsumerSecret: companyAlias }, function() {
+      alert('Successfully Saved Key, Secret and Alias')
     })
   })
 

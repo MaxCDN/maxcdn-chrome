@@ -3,23 +3,32 @@
   <head>
     <title>MaxCDN Chrome Options</title>
     <script src="options.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Options Yo'</h1>
-    <fieldset>
-      <legend>Set this shit</legend>
-      <label for="consumer-key">
-        <strong>Consumer Key:</strong>
-        <br />
-        <input type="text" id="consumer-key" />
-      </label>
-      <hr />
-      <label for="consumer-secret">
-        <strong>Consumer Secret:</strong>
-        <br />
-        <input type="text" id="consumer-secret" />
-      </label>
-    </fieldset>
-    <button type="button" id="submit">Submit Yo"</button>
+	<div class="container">
+	    <h3>Options:</h3>
+	    <fieldset>
+	      <legend>Go to the <a href="https://cp.maxcdn.com/account/api" target="_blank">API Control Panel</a> to get started.</legend>
+	      <label for="consumer-key">
+	        <strong>Consumer Key:</strong>
+	        <br />
+	        <input type="password" id="consumer-key" />
+	      </label>
+	      <hr />
+	      <label for="consumer-secret">
+	        <strong>Consumer Secret:</strong>
+	        <br />
+	        <input type="password" id="consumer-secret" />
+	      </label>
+	      <hr />
+	      <label for="company-alias">
+	        <strong>Company Alias:</strong>
+	        <br />
+	        <input type="text" id="company-alias" />
+	      </label>
+	    </fieldset>
+	    <button class="btn btn-primary" type="button" id="submit">Save</button>
+	</div>
   </body>
 </html>
