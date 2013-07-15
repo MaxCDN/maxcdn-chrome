@@ -15,18 +15,10 @@ chrome.storage.local.get(['MaxConsumerKey', 'MaxConsumerSecret', 'MaxCompanyAlia
   /*globals OAuth*/
   oauth = new OAuth(options)
 
-  function bytesToSize(bytes) {
-    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-    if (bytes === 0) return 'n/a'
-    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
-    return (bytes / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
-	}
-
   oauth.get('https://rws.netdna.com/jdorfman/reports/nodes.json/stats/monthly', function(response) {
     response = JSON.parse(response.text)
-    var rdss = response.data.summary.size
-    document.getElementById('size').innerHTML = bytesToSize(rdss);
-    document.getElementById('cache-hits').innerHTML = response.data.summary.cache_hit
-    document.getElementById('non-cache-hits').innerHTML = response.data.summary.noncache_hit
+    document.getElementById('size').innerHTML = numeral(response.data.summary.size).format('0.000 b');
+    document.getElementById('cache-hits').innerHTML = numeral(response.data.summary.cache_hit).format('0.a');
+    document.getElementById('non-cache-hits').innerHTML = numeral(response.data.summary.noncache_hit).format('0.a')
   })
 })
