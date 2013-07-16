@@ -1,8 +1,9 @@
 {
   "name": "MaxCDN Chrome",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "View your MaxCDN Chrome Extension.",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://; object-src 'self'",
   "homepage_url": "https://extension.maxcdn.com",
   "icons": {
     "16": "icon16.png",
