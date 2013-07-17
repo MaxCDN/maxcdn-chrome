@@ -3,6 +3,10 @@
   <head>
     <title>MaxCDN Chrome</title>
     <script src="jsoauth.js"></script>
+    <script src="numeral.js"></script>
+    <script src="moment.js"></script>
+    <script src="jsapi.js"></script> <!-- google api stuff -->
+    <script src="pops.js"></script> <!-- drawMarkersMap(cdnData) -->
     <script src="script.js"></script>
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
@@ -13,21 +17,34 @@
     <h3>Reports - Past 30 Days</h3>
     <hr />
     <div>
-      <span id="size"></span>
+      <span id="size">
+      	<div class="progress progress-warning progress-striped active">
+		  <div class="bar" style="width: 100%;"></div>
+		</div>
+      </span>
       <br />
       Transferred
     </div>
     <hr />
     <div>
-      <span id="cache-hits"></span>
+      <span id="cache-hits">
+      	<div class="progress progress-warning progress-striped active">
+		  <div class="bar" style="width: 100%;"></div>
+		</div>
+      </span>
       <br />
       Cache Hits
     </div>
     <hr />
     <div>
-      <span id="non-cache-hits"></span>
+      <span id="non-cache-hits">
+      	<div class="progress progress-warning progress-striped active">
+		  <div class="bar" style="width: 100%;"></div>
+		</div>
+      </span>
       <br />
       Non-cache Hits
     </div>
+    <div id="chart_div" style="width: 500px; height: 300px;"></div>
   </body>
 </html>
