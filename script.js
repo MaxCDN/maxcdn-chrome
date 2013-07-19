@@ -98,22 +98,41 @@ chrome.storage.local.get(storageLocals, function(items) {
       cdnData.push(arr);
     }
     */
-
+    //populate data for city data
+    var tooltip = '';
     $.each(response.data.stats, function(i, stat){
+        var statsize = parseInt(stat.size);
+        var statsize_length = stat.size.length;
+                    
+        if (statsize_length >= 13) {
+            statsize = statsize/1024/1024/1024/1024; //TB
+            tooltip = "Requests: "+addCommas(stat.hit)+" Bandwidth: "+statsize.toFixed(2)+" TB";
+        } else if (statsize_length >= 10 && statsize_length <= 12) {
+            statsize = statsize/1024/1024/1024; //GB
+            tooltip = "Requests: "+addCommas(stat.hit)+" Bandwidth: "+statsize.toFixed(2)+" GB";
+        } else if (statsize_length >= 7 && statsize_length <= 9) {
+            statsize = statsize/1024/1024; //MB
+            tooltip = "Requests: "+addCommas(stat.hit)+" Bandwidth: "+statsize.toFixed(2)+" MB";
+        } else if (statsize_length >= 4 && statsize_length <= 6) {
+            statsize = statsize/1024; //KB
+            tooltip = "Requests: "+addCommas(stat.hit)+" Bandwidth: "+statsize.toFixed(2)+" KB";
+        } else {
+            tooltip = "Requests: "+addCommas(stat.hit)+" Bandwidth: "+statsize.toFixed(2)+" bytes";
+        }
+
+
         if ($.inArray(stat.pop_description, us_cities)>=0) {
             us_rows.push([
                 stat.pop_description,
-                parseInt(stat.cache_hit),
-                parseInt(stat.hit)
-                //tooltip
+                parseInt(stat.hit),
+                tooltip
                 //parseFloat(stat.size/1024/1024/1024)
             ]);
         } else {
             eu_rows.push([
                 stat.pop_description,
-                parseInt(stat.cache_hit),
-                parseInt(stat.hit)
-                //tooltip
+                parseInt(stat.hit),
+                tooltip
                 //parseFloat(stat.size/1024/1024/1024)
             ]);
         }
