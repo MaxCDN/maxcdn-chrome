@@ -50,8 +50,6 @@ chrome.storage.local.get(storageLocals, function(items) {
   oauth.get(url, function(response) {
 
     response = JSON.parse(response.text);
-    console.log(response);
-
     // validate that we actually have some data
     var summary = response.data.summary
     if (typeof summary.cache_hit !== 'string') {
