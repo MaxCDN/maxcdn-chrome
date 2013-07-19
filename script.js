@@ -49,7 +49,8 @@ chrome.storage.local.get(storageLocals, function(items) {
 
   oauth.get(url, function(response) {
 
-    response = JSON.parse(response.text)
+    response = JSON.parse(response.text);
+    console.log(response);
 
     // validate that we actually have some data
     var summary = response.data.summary
@@ -77,22 +78,50 @@ chrome.storage.local.get(storageLocals, function(items) {
     // }
 
     // we have to populate cdnData like [ { city: 'blah', bandwidth: 1234, hits: 1234 } ]
-    var cdnData = []
+    var cdnData = [];
+
+    var us_cities = ['Los Angeles', 'San Francisco', 'Seattle', 'New York', 'Atlanta', 'Dallas', 'Miami', 'Chicago', 'Virginia'];
+    var eu_cities = ['Amsterdam', 'London', 'Frankfurt'];
+    var us_rows = [];
+    var eu_rows = [];
+
+    /**
     for(var i=0; i<response.data.stats.length; i++) {
-      var stat = response.data.stats[i]
-      var needed = [ 'cache_hit', 'hit' ] // , 'noncache_hit', 'size' ]
-      var arr = []
-      arr.push(stat.pop_description)
+      var stat = response.data.stats[i];
+      var needed = [ 'cache_hit', 'hit' ]; // , 'noncache_hit', 'size' ]
+      var arr = [];
+      arr.push(stat.pop_description);
       for (var n=0; n<needed.length; n++) {
-        stat[needed[n]] = parseInt(stat[needed[n]], 10)
-        arr.push(stat[needed[n]])
+        stat[needed[n]] = parseInt(stat[needed[n]], 10);
+        arr.push(stat[needed[n]]);
       }
-      cdnData.push(arr)
+      cdnData.push(arr);
     }
+    */
+
+    $.each(response.data.stats, function(i, stat){
+        if ($.inArray(stat.pop_description, us_cities)>=0) {
+            us_rows.push([
+                stat.pop_description,
+                parseInt(stat.cache_hit),
+                parseInt(stat.hit)
+                //tooltip
+                //parseFloat(stat.size/1024/1024/1024)
+            ]);
+        } else {
+            eu_rows.push([
+                stat.pop_description,
+                parseInt(stat.cache_hit),
+                parseInt(stat.hit)
+                //tooltip
+                //parseFloat(stat.size/1024/1024/1024)
+            ]);
+        }
+    });
 
     /*globals drawMarkersMap*/
-    drawMarkersMap(cdnData)
-
+    //drawMarkersMap(cdnData);
+    drawMarkersMap(us_rows,eu_rows);
   })
 
 })

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MaxCDN Chrome</title>
+    <script src="jquery-1.10.2.min.js"></script>
     <script src="jsoauth.js"></script>
     <script src="numeral.js"></script>
     <script src="moment.js"></script>
@@ -45,6 +46,21 @@
       <br />
       Non-cache Hits
     </div>
-    <div id="chart_div" style="width: 500px; height: 300px;"></div>
+    <div class="span12">
+        <div class="row">
+            <div class="span6">
+              <div class="well" style="background-color: #FFF;">
+                  <p><strong>United States</strong></p>
+                  <div id="us_chart_div" style="width: 500px; height: 300px;"></div>
+              </div>
+            </div> 
+            <div class="span6">
+              <div class="well" style="background-color: #FFF;">
+                  <p><strong>Europe</strong></p>
+                  <div id="eu_chart_div" style="width: 500px; height: 300px;"></div>
+              </div>
+            </div>
+        </div>    
+    </div>  
   </body>
 </html>
