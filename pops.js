@@ -81,7 +81,7 @@ function drawMarkersMap(us_rows,eu_rows) {
     tooltip:  {textStyle: {color: '#000000'}, showColorCode: true},
     colorAxis: {minValue: 0, colors: ['orange', 'red']},
     keepAspectRatio: true,
-    height: 300
+    height: 275
   }
 
   var eu_options = {
@@ -97,7 +97,7 @@ function drawMarkersMap(us_rows,eu_rows) {
     tooltip:  {textStyle: {color: '#000000'}, showColorCode: true},
     colorAxis: {minValue: 0, colors: ['orange', 'red']},
     keepAspectRatio: true,
-    height: 300
+    height: 275
   }
   //us chart
   var us_chart = new google.visualization.GeoChart(document.getElementById('us_chart_div'))

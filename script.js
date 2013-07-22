@@ -58,9 +58,10 @@ chrome.storage.local.get(storageLocals, function(items) {
     }
 
     /*globals numeral*/
-    document.getElementById('size').innerHTML = numeral(summary.size).format('0.000 b');
-    document.getElementById('cache-hits').innerHTML = numeral(summary.cache_hit).format('0.a');
-    document.getElementById('non-cache-hits').innerHTML = numeral(summary.noncache_hit).format('0.a')
+    document.getElementById('size').innerHTML = numeral(summary.size).format('0.00 b');
+    document.getElementById('cache-hits').innerHTML = addCommas(summary.cache_hit);
+    document.getElementById('non-cache-hits').innerHTML = addCommas(summary.noncache_hit);
+    //document.getElementById('non-cache-hits').innerHTML = numeral(summary.noncache_hit).format('0.a')
 
     // response.data
     // {
