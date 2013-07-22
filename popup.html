@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MaxCDN Chrome</title>
+    <script src="jquery-1.10.2.min.js"></script>
     <script src="jsoauth.js"></script>
     <script src="numeral.js"></script>
     <script src="moment.js"></script>
@@ -11,40 +12,101 @@
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
       body { width: 500px; }
-    </style>
+
+      .stat-container {
+        display: table;  
+        width: 100%;
+      }
+
+      .stat-holder {
+        display: table-cell;
+        width: 25%;
+      }
+
+      .stat span {
+        display: block;
+        margin-bottom: .4em;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: bold;
+        color: #4A515B;
+      }
+
+      .stat {
+        height: 60px;
+        padding: 8px;
+        margin-right: 1em;
+        font-weight: 300;
+        font-size: 14px;
+        font-style: bold;
+        text-align: center;
+        color: #888;
+        background: #FFF;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        text-shadow: 1px 1px 2px rgba(255,255,255,.5);
+      }
+
+
+      .stat-container .stat-holder:last-child .stat {
+        margin: 0;
+      }
+  </style>
   </head>
   <body>
     <h3>Reports - Past 30 Days</h3>
     <hr />
-    <div>
+
+<div class="stat-container">
+  <div class="stat-holder">           
+    <div class="stat">              
       <span id="size">
-      	<div class="progress progress-warning progress-striped active">
-		  <div class="bar" style="width: 100%;"></div>
-		</div>
-      </span>
-      <br />
-      Transferred
-    </div>
-    <hr />
-    <div>
+        <div class="progress progress-warning progress-striped active">
+          <div class="bar" style="width: 100%;"></div>
+        </div>
+      </span>             
+      Transferred            
+    </div> <!-- /stat -->           
+  </div> <!-- /stat-holder -->
+  
+  <div class="stat-holder">           
+    <div class="stat">              
       <span id="cache-hits">
-      	<div class="progress progress-warning progress-striped active">
-		  <div class="bar" style="width: 100%;"></div>
-		</div>
-      </span>
-      <br />
-      Cache Hits
-    </div>
-    <hr />
-    <div>
+        <div class="progress progress-warning progress-striped active">
+          <div class="bar" style="width: 100%;"></div>
+        </div>
+      </span>             
+      Cache Hits             
+    </div> <!-- /stat -->           
+  </div> <!-- /stat-holder -->
+  
+  <div class="stat-holder">           
+    <div class="stat">              
       <span id="non-cache-hits">
-      	<div class="progress progress-warning progress-striped active">
-		  <div class="bar" style="width: 100%;"></div>
-		</div>
-      </span>
-      <br />
-      Non-cache Hits
-    </div>
-    <div id="chart_div" style="width: 500px; height: 300px;"></div>
+        <div class="progress progress-warning progress-striped active">
+          <div class="bar" style="width: 100%;"></div>
+        </div>
+      </span>             
+      None-cache Hits               
+    </div> <!-- /stat -->           
+  </div> <!-- /stat-holder -->
+</div>  
+<p>
+    <div class="span12">
+        <div class="row">
+            <div class="span6">
+              <div class="well" style="background-color: #FFF;">
+                  <p><strong>United States</strong></p>
+                  <div id="us_chart_div" style="width: 475px; height: 285px;"></div>
+              </div>
+            </div> 
+            <div class="span6">
+              <div class="well" style="background-color: #FFF;">
+                  <p><strong>Europe</strong></p>
+                  <div id="eu_chart_div" style="width: 475px; height: 285px;"></div>
+              </div>
+            </div>
+        </div>    
+    </div>  
   </body>
 </html>
