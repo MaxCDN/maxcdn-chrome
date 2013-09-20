@@ -19,6 +19,6 @@ $ unzip maxcdn-chrome-master.zip
 Screenshots
 ===========
 
-![EXT](http://jdorfman.cdnconnect.com/maxcdn/maxcdn-chrome/screenshot-1.png)
 ![EXT](http://jdorfman.cdnconnect.com/maxcdn/maxcdn-chrome/screenshot-2.png)
+![EXT](http://jdorfman.cdnconnect.com/maxcdn/maxcdn-chrome/screenshot-1.png)
 ![EXT](http://jdorfman.cdnconnect.com/maxcdn/maxcdn-chrome/screenshot-3.png)
