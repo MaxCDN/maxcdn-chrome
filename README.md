@@ -8,7 +8,7 @@ Instructions
 
 ```shell
 $ wget https://github.com/maxcdn/maxcdn-chrome/archive/master.zip
-$ unzip maxcdn-chrome-justin.zip
+$ unzip maxcdn-chrome-master.zip
 ```
 * Open Chrome
 * Go to: `chrome://extensions/`
