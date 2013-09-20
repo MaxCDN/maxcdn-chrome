@@ -10,6 +10,11 @@ Instructions
 $ wget https://github.com/maxcdn/maxcdn-chrome/archive/master.zip
 $ unzip maxcdn-chrome-justin.zip
 ```
+* Open Chrome
+* Go to: `chrome://extensions/`
+* Click "Load unpacked extension"
+* Choose the `maxcdn-chrome` directory and click the `Select` button
+* Click `Options`, fill in your API credentials and click `Save`.
 
 Screenshots
 ===========
