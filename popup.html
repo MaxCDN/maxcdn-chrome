@@ -9,6 +9,7 @@
     <script src="jsapi.js"></script> <!-- google api stuff -->
     <script src="pops.js"></script> <!-- drawMarkersMap(cdnData) -->
     <script src="script.js"></script>
+    <script src="bootstrap.min.js"></script>
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
       body { width: 500px; }
@@ -91,22 +92,34 @@
     </div> <!-- /stat -->           
   </div> <!-- /stat-holder -->
 </div>  
-<p>
+<hr>
+<div class="row">
     <div class="span12">
-        <div class="row">
-            <div class="span6">
-              <div class="well" style="background-color: #FFF;">
-                  <p><strong>United States</strong></p>
-                  <div id="us_chart_div" style="width: 475px; height: 285px;"></div>
-              </div>
-            </div> 
-            <div class="span6">
-              <div class="well" style="background-color: #FFF;">
-                  <p><strong>Europe</strong></p>
-                  <div id="eu_chart_div" style="width: 475px; height: 285px;"></div>
-              </div>
-            </div>
-        </div>    
-    </div>  
+		  <ul class="nav nav-tabs" id="myTab">
+			 <li class="active"><a href="#us" data-toggle="tab">USA</a></li>
+			 <li><a href="#eu" data-toggle="tab">EU</a></li>
+		  </ul>
+    </div>
+
+		<div class="tab-content">
+			<div class="tab-pane active" id="us">
+				<div class="span6">
+	         <div class="well" style="background-color: #FFF;">
+	           <p><strong>United States</strong></p>
+	              <div id="us_chart_div" style="width: 475px; height: 285px;"></div>
+	         </div>
+	        </div>
+			</div>
+    
+			<div class="tab-pane" id="eu">
+				<div class="span6">
+	           <div class="well" style="background-color: #FFF;">
+	             <p><strong>Europe</strong></p>
+	             <div id="eu_chart_div" style="width: 475px; height: 285px;"></div>
+	           </div>
+	       </div>
+	    </div>
+    </div>
+</div>
   </body>
 </html>
