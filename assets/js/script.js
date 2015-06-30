@@ -1,9 +1,9 @@
 var oauth, options
 
 options = {
-  requestTokenUrl: 'https://rws.netdna.com/oauth/request_token',
-  authorizationUrl: 'https://rws.netdna.com/oauth/authorize',
-  accessTokenUrl: 'https://rws.netdna.com/oauth/access_token'
+  requestTokenUrl: 'https://rws.maxcdn.com/oauth/request_token',
+  authorizationUrl: 'https://rws.maxcdn.com/oauth/authorize',
+  accessTokenUrl: 'https://rws.maxcdn.com/oauth/access_token'
 }
 
 var storageLocals = [
@@ -40,7 +40,7 @@ chrome.storage.local.get(storageLocals, function(items) {
     , date_to: moment().format('YYYY-MM-DD')
   }
 
-  var url = 'https://rws.netdna.com/'
+  var url = 'https://rws.maxcdn.com/'
   url += MCA
   url += '/reports/nodes.json/stats'
   url += '?date_from=' + query.date_from
@@ -102,7 +102,7 @@ chrome.storage.local.get(storageLocals, function(items) {
     $.each(response.data.stats, function(i, stat){
         var statsize = parseInt(stat.size);
         var statsize_length = stat.size.length;
-                    
+
         if (statsize_length >= 13) {
             statsize = statsize/1024/1024/1024/1024; //TB
             tooltip = "Requests: "+addCommas(stat.hit)+" Bandwidth: "+statsize.toFixed(2)+" TB";
