@@ -17,7 +17,7 @@
   },
   "options_page": "options.html",
   "permissions": [
-    "https://rws.netdna.com/*",
+    "https://rws.maxcdn.com/*",
     "tabs",
     "storage"
   ]
